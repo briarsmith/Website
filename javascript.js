@@ -3,21 +3,16 @@
  */
 
 // Cycle through background images
+$('#img2').hide();
+$('#img3').hide();
+$('#img4').hide();
 
 window.setInterval(function () {
-    $("#home-background").delay(2000);
-    $("#home-background").attr('src', 'imgs/kittty.jpg');//.fadeOut(500);
-    $("#home-background").attr('src', 'imgs/space1.jpg').fadeIn(500);
-    $("#home-background").delay(2000);
-    $("#home-background").attr("src", "imgs/space1.jpg").fadeOut(500);
-    $("#home-background").attr("src", "imgs/nice tree.jpg").fadeIn(500);
-    $("#home-background").delay(2000);
-    $("#home-background").attr("src", "imgs/nice tree.jpg").fadeOut(500);
-    $("#home-background").attr("src", "imgs/tiger.jpg").fadeIn(500);
-    $("#home-background").delay(2000);
-    $("#home-background").attr("src", "imgs/tiger.jpg").fadeOut(500);
-    $("#home-background").attr("src", "imgs/kittty.jpg").fadeIn(500);
-    $("#home-background").attr('src', 'imgs/kittty.jpg');
-    
+    $('#home-container :first-child').fadeOut(4000, function(){
+        $('#home-container :first-child').next('img').fadeIn(4000).delay(1000).end().appendTo('#home-container');
+    })
+    /*$('#home-container :first-child').fadeOut();
+    $('#home-container :first-child').delay(1000);
+    $('#home-container :first-child').next('img').fadeIn(3000).end().appendTo('#home-container');*/
 }, 9000);
 
