@@ -3,21 +3,18 @@
  */
 
 // Cycle through background images
+function cycleImages(){
+    var $active = $('#cycler .active');
+    var $next = ($active.next().length > 0) ? $active.next() : $('#cycler img:first');
+    $next.css('z-index',2);//move the next image up the pile
+    $active.fadeOut(3000,function(){//fade out the top image
+        $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+        $next.css('z-index',3).addClass('active');//make the next image the top one
+    });
+}
 
-window.setInterval(function () {
-    $("#home-background").delay(2000);
-    $("#home-background").attr('src', 'imgs/kittty.jpg');//.fadeOut(500);
-    $("#home-background").attr('src', 'imgs/space1.jpg').fadeIn(500);
-    $("#home-background").delay(2000);
-    $("#home-background").attr("src", "imgs/space1.jpg").fadeOut(500);
-    $("#home-background").attr("src", "imgs/nice tree.jpg").fadeIn(500);
-    $("#home-background").delay(2000);
-    $("#home-background").attr("src", "imgs/nice tree.jpg").fadeOut(500);
-    $("#home-background").attr("src", "imgs/tiger.jpg").fadeIn(500);
-    $("#home-background").delay(2000);
-    $("#home-background").attr("src", "imgs/tiger.jpg").fadeOut(500);
-    $("#home-background").attr("src", "imgs/kittty.jpg").fadeIn(500);
-    $("#home-background").attr('src', 'imgs/kittty.jpg');
-    
-}, 9000);
+$(document).ready(function(){
+// run every 7s
+    setInterval('cycleImages()', 7000);
+})
 
