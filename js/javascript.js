@@ -1,17 +1,14 @@
 /**
  * Created by Briar on 11/13/2016.
  */
-
 // Background image slider :) it works nicely 
 $(function() {
     $('#maximage').maximage({
         cycleOptions: {
             fx: 'fade',
             //sync: false,
-            speed: 1000,
-            timeout: 4000,
-            prev: '#arrow_left',
-            next: '#arrow_right',
+            speed: 4000,
+            timeout: 8000,
             pager: '#cycle-nav ul',
             pagerAnchorBuilder: function(idx, slide) {
                 return '<li><a href="#"></a></li>';
@@ -27,6 +24,9 @@ $(function() {
         $('#maximage').cycle('fx: fade');
     });
 });
+
+//$('#navyy').hide();
+
 
 
 
