@@ -1,36 +1,6 @@
-#cycler{
-    position:relative;
-    width:100%;
-    height:100%;
-    overflow: hidden;
-}
-#cycler div{
-    position:absolute;
-    z-index:1;
-    background-color:white;
-    width:100%;
-    left:0;
-    top:0;
-    display:none;
-}
-#cycler div.active {
-    z-index:3;
-}
-#cycler div.base {
-    z-index:-1;
-    position:static;
-    display:block;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-.slider-pics {
-    position:absolute;
-    margin: 0 auto;
-}
+#cycler{position:relative;}
+#cycler img{position:absolute;z-index:1}
+#cycler img.active{z-index:3}
 
 
 

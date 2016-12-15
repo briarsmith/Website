@@ -10,15 +10,14 @@ function cycleImages(){
         $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
         $next.css('z-index',3).addClass('active');//make the next image the top one
     });
+    $("body").ezBgResize({
+        img : "imgs/nice tree.jpg"
+    });
 }
 
 $(document).ready(function(){
-// run every 7s
-    setInterval('cycleImages()', 7000);
-
-    $(".active").ezBgResize({
-        img : $('.active').attr(src)
-    });
+// run every 7
+    setInterval('cycleImages()', 4000);
 });
 
 
