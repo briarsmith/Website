@@ -67,6 +67,8 @@ div.mc-image {
 	color: white;
 	position: absolute;
 	top: 50%;
-	left: 10%;
+	left: 5%;
+	right: 5%;
+	text-align: center;
 }
 
