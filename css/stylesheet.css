@@ -24,4 +24,10 @@ body {
     top: 2%;
 }
 
+@media (max-width: 767px) {
+    #navyy {
+        height: 100%;
+    }
+}
+
 

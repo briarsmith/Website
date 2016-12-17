@@ -14,7 +14,7 @@ $(function() {
     });
     $('#maximage').maximage({
         cycleOptions: {
-            fx: 'fadeZoom',
+            fx: 'fade',
             //sync: false,
             speed: 4000,
             timeout: 8000,
@@ -24,11 +24,11 @@ $(function() {
             }
         },
         onFirstImageLoaded: function() {
-            jQuery('#maximage').fadeIn('fast');
-
+            jQuery('#maximage').show();
+            $('#after').show();
             $('#menu-icon').on('click', function() {
-                $('#navyy').show();
-                $('#menu-icon').hide();
+                $('#navyy').fadeIn('400');
+                $('#menu-icon').fadeOut('400');
             });
         }
     });
@@ -36,18 +36,18 @@ $(function() {
 });
 
 
-//$(document).mouseup(function (e)
-// {
-//     var container = $("#navyy");
-//
-//     if (!container.is(e.target) // if the target of the click isn't the container...
-//         && container.has(e.target).length === 0) // ... nor a descendant of the container
-//     {
-//         $('#menu-icon').show();
-//         container.hide();
-//     }
-// });
-//
+$(document).mouseup(function (e)
+{
+    var container = $("#navyy");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        $('#menu-icon').fadeIn('400');
+        container.fadeOut('400');
+    }
+});
+
 
 
 });
