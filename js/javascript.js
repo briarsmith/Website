@@ -2,13 +2,19 @@
  * Created by Briar on 11/13/2016.
  */
 // $('#menu-icon').show();
-
+$(document).ready(function(){
+$('#navyy').hide();
+    $('#after').hide();
 // $('#navyy').hide();
-// Background image slider :) it works nicely 
+// Background image slider :) it works nicely
 $(function() {
+    $('.toggle').bind('click', function(e){
+        e.preventDefault();
+        $('#maximage').cycle('toggle');
+    });
     $('#maximage').maximage({
         cycleOptions: {
-            fx: 'fade',
+            fx: 'fadeZoom',
             //sync: false,
             speed: 4000,
             timeout: 8000,
@@ -18,37 +24,32 @@ $(function() {
             }
         },
         onFirstImageLoaded: function() {
-            jQuery('#maximage').fadeIn(0);
+            jQuery('#maximage').fadeIn('fast');
 
-            $('#navyy').hide();
-            $('#menu-icon').show();
             $('#menu-icon').on('click', function() {
                 $('#navyy').show();
                 $('#menu-icon').hide();
             });
-
-            $(document).mouseup(function (e)
-            {
-                var container = $("#navyy");
-
-                if (!container.is(e.target) // if the target of the click isn't the container...
-                    && container.has(e.target).length === 0) // ... nor a descendant of the container
-                {
-                    $('#menu-icon').show();
-                    container.hide();
-                }
-            });
         }
     });
-    
-    $('.toggle').bind('click', function(e){
-        e.preventDefault();
-        $('#maximage').cycle('fx: fade');
-    });
+
 });
 
 
+//$(document).mouseup(function (e)
+// {
+//     var container = $("#navyy");
+//
+//     if (!container.is(e.target) // if the target of the click isn't the container...
+//         && container.has(e.target).length === 0) // ... nor a descendant of the container
+//     {
+//         $('#menu-icon').show();
+//         container.hide();
+//     }
+// });
+//
 
 
+});
 
 
