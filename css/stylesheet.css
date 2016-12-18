@@ -10,24 +10,76 @@ body {
 #navyy {
     width: 100%;
     text-align: center;
-    position: absolute;
+    position: fixed;
     margin: auto;
     background-color: rgba(188,192,194,0.4);
+    display: fixed;
 }
 
 .background-pills {
     color:white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18.5px;
+}
+
+.glyphicon {
+    font-size: 24px;
 }
 
 #menu-icon {
     position: absolute;
-    top: 2%;
+    top: 1.5%;
+    color: white;
+    right: 1.5%;
 }
-
-@media (max-width: 767px) {
+/*or min-width*/
+@media (max-width: 768px) {
     #navyy {
         height: 100%;
+        position: absolute;
+        top: 40%;
     }
 }
 
+ul.nav .background-pills {
+    border-radius: 0px;
+}
 
+ul.nav .background-pills:hover {
+    background-color: transparent;
+    color: white;
+    margin-bottom: -2px;
+}
+
+ul.nav .background-pills:active {
+    color: #18BC9C;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+ul.nav .background-pills:focus {
+    color: #18BC9C;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.navlist {
+    /*border-right: 1px solid rgba(255, 255, 255, .2)*/
+
+}
+.navlist:hover {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.back-text {
+    font-size:50px;
+    font-family: 'Fondamento', cursive;
+}
+
+/* an easy solution for double clicking the menu icon is to
+add a pointer-events = none in the onclick. then globally set it
+to normal pointer events afterwards */
