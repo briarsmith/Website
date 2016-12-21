@@ -49,20 +49,22 @@ $(document).mouseup(function (e)
 });
 
 
-    $(window).resize(function() {
-        windowsize = $(window).width();
-        if ($('#navyy').is(":visible")) {
-            if (windowsize < 768) {
-                //if the window is greater than 440px wide then turn on jScrollPane..
-                $('#wrapper').css('background-color', 'rgba(166,166,166,0.4)');
-            }
-            else {
-                $('#wrapper').css('background-color', 'transparent');
-            }
-        }
-    });
+    // $(window).resize(function() {
+    //     windowsize = $(window).width();
+    //     if ($('#navyy').is(":visible")) {
+    //         if (windowsize < 768) {
+    //             //if the window is greater than 440px wide then turn on jScrollPane..
+    //             $('#wrapper').css('background-color', 'rgba(166,166,166,0.4)');
+    //         }
+    //         else {
+    //             $('#wrapper').css('background-color', 'transparent');
+    //         }
+    //     }
+    // });
 
-
+$('#clicktest').on('click', function() {
+    // verified onclick works for each nav bar item.
+});
 
 
 

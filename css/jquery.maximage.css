@@ -48,6 +48,7 @@ div.mc-image {
 	height:100%;
 	overflow:hidden;
 	width:100%;
+	background-attachment: fixed;
 }
 
 .mc-old-browser .mc-image {
