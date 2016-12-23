@@ -87,6 +87,26 @@ body {
     font-family: 'Fondamento', cursive;
 }
 
+#initial-content
+{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    height:100%;
+    z-index:3;
+}
+
+#after
+{
+    position:relative; 
+    left:0;
+    right:0;
+    top:1920px;
+    z-index:2000;
+    
+}
+
 /* an easy solution for double clicking the menu icon is to
 add a pointer-events = none in the onclick. then globally set it
 to normal pointer events afterwards */

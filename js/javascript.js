@@ -62,6 +62,16 @@ $(document).mouseup(function (e)
     //     }
     // });
 
+    $(window).scroll(function() {
+    if ($('#after').is(':visible')) {
+        $('.in-slide-content').fadeOut('500');
+    }
+    else {
+        $('.in-slide-content').fadeIn('500');
+    }
+    });
+
+
 $('#clicktest').on('click', function() {
     // verified onclick works for each nav bar item.
 });
