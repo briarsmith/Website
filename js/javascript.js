@@ -99,6 +99,21 @@ $('#clicktest').on('click', function() {
     //     }
     // });
 
+    var divs = $('#initial-content');
+    $(window).on('scroll', function() {
+        if ($('#after').is(':visible')) {
+            $('.in-slide-content').fadeOut(800);
+        }
+        if (!($('#after').is(':visible'))) {
+            $('.in-slide-content').fadeIn(800);
+        }
+        if (window.scrollY > 500) {
+            $('#after').animate({scrollTop:$('#after').offset().top}, 2000);
+        }
+        var st = $(this).scrollTop();
+        divs.css({ 'opacity' : (1 - st/974) });
+        $('#after').css('opacity', st/974);
+    });
 
 });
 

@@ -18,10 +18,6 @@ body {
     height: 5%;
 }
 
-#after {
-    background-color: #ECECEA;
-}
-
 .background-pills {
     color:white;
     font-family: 'Josefin Sans', sans-serif;
@@ -104,6 +100,7 @@ body {
     right:0;
     top:974px;
     z-index:2000;
+    /*background-color: #ECECEA;*/
     
 }
 
