@@ -62,20 +62,42 @@ $(document).mouseup(function (e)
     //     }
     // });
 
-    $(window).scroll(function() {
-    if ($('#after').is(':visible')) {
-        $('.in-slide-content').fadeOut('500');
-    }
-    else {
-        $('.in-slide-content').fadeIn('500');
-    }
-    });
+    // $(window).scroll(function() {
+    // if ($('#after').is(':visible')) {
+    //     $('.in-slide-content').fadeOut('500');
+    // }
+    // else {
+    //     $('.in-slide-content').fadeIn('500');
+    // }
+    // });
 
 
 $('#clicktest').on('click', function() {
     // verified onclick works for each nav bar item.
 });
 
+    // smooth scrolling to anchors
+    $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1600);
+                    return false;
+                }
+            }
+        });
+    });
+
+    // var eventPosition = 550; // This is the height position you want the event to fire on.
+    // $(window).scroll(function(e) {
+    //     if ((window.scrollY + 900) >= 1300) {
+    //         window.scrollTo(0, 100);
+    //     }
+    // });
 
 
 });
