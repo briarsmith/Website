@@ -5,6 +5,8 @@
 $(document).ready(function(){
 $('#navyy').hide();
     $('#after').hide();
+    var height = $('#initial-content').height();
+    $('#after').css('top', height);
 // $('#navyy').hide();
 // Background image slider :) it works nicely
 $(function() {
@@ -92,28 +94,71 @@ $('#clicktest').on('click', function() {
         });
     });
 
-    // var eventPosition = 550; // This is the height position you want the event to fire on.
-    // $(window).scroll(function(e) {
-    //     if ((window.scrollY + 900) >= 1300) {
-    //         window.scrollTo(0, 100);
-    //     }
+    // var page = $('html, body');
+    // page.on("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove", function(){
+    //     page.stop();
+    // });
+    //
+    // page.animate({ scrollTop: $(this).position().top }, 'slow', function(){
+    //     page.off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
     // });
 
     var divs = $('#initial-content');
+    var lastScrollTop = 0;
     $(window).on('scroll', function() {
-        if ($('#after').is(':visible')) {
-            $('.in-slide-content').fadeOut(800);
+            var st = $(this).scrollTop();
+            if (st > lastScrollTop){
+                // downscroll code
+                if (window.scrollY > (height / 2) && window.scrollY < (height *(2/3))) {
+                    $('html, body').animate({
+                        scrollTop: $("#after").offset().top
+                    }, 3000, function () {
+                        $('html, body').stop(true);
+                    });
+                }
+            } else {
+                // upscroll code
+                if (window.scrollY < (height * (2/3)) && window.scrollY > (height /2)) {
+                    $('html, body').animate({
+                        scrollTop: 0
+                    }, 3000, function() {
+                        $('html, body').stop(true);
+                    });
+                }
+            }
+            lastScrollTop = st;
+
+        if ($('#after').isOnScreen()) {
+            $('.in-slide-content').fadeOut(700);
         }
-        if (!($('#after').is(':visible'))) {
-            $('.in-slide-content').fadeIn(800);
-        }
-        if (window.scrollY > 500) {
-            $('#after').animate({scrollTop:$('#after').offset().top}, 2000);
+        if (!($('#after').isOnScreen())) {
+            $('.in-slide-content').fadeIn(700);
         }
         var st = $(this).scrollTop();
-        divs.css({ 'opacity' : (1 - st/974) });
-        $('#after').css('opacity', st/974);
+        divs.css({ 'opacity' : (1 - st/height) });
+        $('#after').css('opacity', st/height);
     });
+
+    $.fn.isOnScreen = function(){
+
+        var win = $(window);
+
+        var viewport = {
+            top : win.scrollTop(),
+            left : win.scrollLeft()
+        };
+        viewport.right = viewport.left + win.width();
+        viewport.bottom = viewport.top + win.height();
+
+        var bounds = this.offset();
+        bounds.right = bounds.left + this.outerWidth();
+        bounds.bottom = bounds.top + this.outerHeight();
+
+        return (!(viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+
+    };
+
+
 
 });
 

@@ -2,10 +2,10 @@ body {
     margin: 0;
 }
 
-::-webkit-scrollbar {
-    width: 0px;  /* remove scrollbar space */
-    background: transparent;  /* optional: just make scrollbar invisible */
-}
+/*::-webkit-scrollbar {*/
+    /*width: 0px;  !* remove scrollbar space *!*/
+    /*background: transparent;  !* optional: just make scrollbar invisible *!*/
+/*}*/
 
 /* Navbar CSS */
 #navyy {
@@ -98,10 +98,16 @@ body {
     position:relative; 
     left:0;
     right:0;
-    top:974px;
     z-index:2000;
     /*background-color: #ECECEA;*/
     
+}
+
+*::selection {
+    background: #ffb7b7; /* WebKit/Blink Browsers */
+}
+*::-moz-selection {
+    background: #ffb7b7; /* Gecko Browsers */
 }
 
 /* an easy solution for double clicking the menu icon is to
