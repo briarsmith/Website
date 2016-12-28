@@ -103,6 +103,12 @@ $('#clicktest').on('click', function() {
     //     page.off("scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove");
     // });
 
+    // $('body,html').bind('scroll mousedown wheel DOMMouseScroll mousewheel keyup', function(e){
+    //     if ( e.which > 0 || e.type == "mousedown" || e.type == "mousewheel"){
+    //         $("html,body").stop();
+    //     }
+    // });
+
     var divs = $('#initial-content');
     var lastScrollTop = 0;
     $(window).on('scroll', function() {
