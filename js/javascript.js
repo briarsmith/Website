@@ -112,25 +112,36 @@ $('#clicktest').on('click', function() {
     var divs = $('#initial-content');
     var lastScrollTop = 0;
     $(window).on('scroll', function() {
+
             var st = $(this).scrollTop();
             if (st > lastScrollTop){
                 // downscroll code
-                if (window.scrollY > (height / 2) && window.scrollY < (height *(2/3))) {
-                    $('html, body').animate({
-                        scrollTop: $("#after").offset().top
-                    }, 3000, function () {
-                        $('html, body').stop(true);
-                    });
-                }
+                clearTimeout($.data(this, 'scrollTimer'));
+                $.data(this, 'scrollTimer', setTimeout(function() {
+                    // do something
+                    if (window.scrollY > (height / 2) && window.scrollY < (height *(2/3))) {
+                        $('html, body').animate({
+                            scrollTop: $("#after").offset().top
+                        }, 1600, function () {
+                            $('html, body').stop(true);
+                        });
+                    }
+                    console.log("Haven't scrolled in 250ms!");
+                }, 250));
             } else {
                 // upscroll code
-                if (window.scrollY < (height * (2/3)) && window.scrollY > (height /2)) {
-                    $('html, body').animate({
-                        scrollTop: 0
-                    }, 3000, function() {
-                        $('html, body').stop(true);
-                    });
-                }
+                clearTimeout($.data(this, 'scrollTimer'));
+                $.data(this, 'scrollTimer', setTimeout(function() {
+                    // do something
+                    if (window.scrollY < (height * (2/3)) && window.scrollY > (height /2)) {
+                        $('html, body').animate({
+                            scrollTop: 0
+                        }, 1600, function() {
+                            $('html, body').stop(true);
+                        });
+                    }
+                    console.log("Haven't scrolled in 250ms!");
+                }, 250));
             }
             lastScrollTop = st;
 
