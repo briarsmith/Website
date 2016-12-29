@@ -120,10 +120,13 @@ to normal pointer events afterwards */
     width: 33%;
     border: 5px solid black;
     border-radius: 5px;
-    margin-left: 10%;
     margin-right: 3%;
     font-size: 0;
     line-height: 0;
+}
+
+.text-container {
+    text-align: left;
 }
 
 .text-container {
@@ -133,6 +136,7 @@ to normal pointer events afterwards */
 
 .pic-container {
     width: 100%;
+    text-align: center;
     margin-bottom: 5%;
 }
 
