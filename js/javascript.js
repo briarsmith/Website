@@ -119,7 +119,7 @@ $('#clicktest').on('click', function() {
                 clearTimeout($.data(this, 'scrollTimer'));
                 $.data(this, 'scrollTimer', setTimeout(function() {
                     // do something
-                    if (window.scrollY > (height / 2) && window.scrollY < (height *(2/3))) {
+                    if (window.scrollY < (height / 2) && window.scrollY > 0) {
                         $('html, body').animate({
                             scrollTop: $("#after").offset().top
                         }, 1600, function () {
