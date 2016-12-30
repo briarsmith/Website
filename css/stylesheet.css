@@ -26,10 +26,11 @@ body {
 }
 
 #menu-icon {
-    position: absolute;
+    position: fixed;
     top: 1.5%;
     right: 1.5%;
     color: white;
+    z-index: 4;
 }
 /*or min-width*/
 /*@media (max-width: 768px) {*/
@@ -98,7 +99,6 @@ body {
     position:relative; 
     left:0;
     right:0;
-    z-index:2000;
     /*background-color: #ECECEA;*/
     
 }
@@ -127,6 +127,7 @@ to normal pointer events afterwards */
 
 .text-container {
     text-align: left;
+    width: 33%;
 }
 
 .text-container {

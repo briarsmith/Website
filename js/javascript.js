@@ -126,7 +126,6 @@ $('#clicktest').on('click', function() {
                             $('html, body').stop(true);
                         });
                     }
-                    console.log("Haven't scrolled in 250ms!");
                 }, 250));
             } else {
                 // upscroll code
@@ -140,7 +139,6 @@ $('#clicktest').on('click', function() {
                             $('html, body').stop(true);
                         });
                     }
-                    console.log("Haven't scrolled in 250ms!");
                 }, 250));
             }
             lastScrollTop = st;
@@ -154,7 +152,14 @@ $('#clicktest').on('click', function() {
         var st = $(this).scrollTop();
         divs.css({ 'opacity' : (1 - st/height) });
         $('#after').css('opacity', st/height);
+        if ((1 - st/height) < 0.4) {
+            $('#menu-icon').css('color', 'black');
+        }
+        else {
+            $('#menu-icon').css('color', 'white');
+        }
     });
+
 
     $.fn.isOnScreen = function(){
 
