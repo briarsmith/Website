@@ -1,5 +1,6 @@
-body {
+body, html {
     margin: 0;
+    font-size: 100%;
 }
 
 /*::-webkit-scrollbar {*/
@@ -16,6 +17,7 @@ body {
     background-color: rgba(153,153,153,0.7);
     margin: 0px;
     height: 5%;
+    z-index: 4;
 }
 
 .background-pills {
@@ -31,6 +33,7 @@ body {
     right: 1.5%;
     color: white;
     z-index: 4;
+    font-size: 225%;
 }
 /*or min-width*/
 /*@media (max-width: 768px) {*/
@@ -80,8 +83,24 @@ body {
 }
 
 .back-text {
-    font-size:50px;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 220%;
     font-family: 'Fondamento', cursive;
+    color: white;
+}
+
+.in-slide-content {
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+
+}
+
+.rest {
+    text-align: center;
+    vertical-align: center;
 }
 
 #initial-content
@@ -117,7 +136,7 @@ to normal pointer events afterwards */
 /* Experience CSS */
 .experience-pics {
     display: inline-block;
-    width: 33%;
+    width: 40%;
     border: 5px solid black;
     border-radius: 5px;
     margin-right: 3%;
@@ -127,7 +146,7 @@ to normal pointer events afterwards */
 
 .text-container {
     text-align: left;
-    width: 33%;
+    width: 40%;
 }
 
 .text-container {
@@ -145,7 +164,7 @@ to normal pointer events afterwards */
     display: block;
     padding-bottom: 2%;
     padding-top: 2%;
-    font-size: 150%;
+    font-size: 250%;
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
 }

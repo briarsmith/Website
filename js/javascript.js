@@ -137,6 +137,7 @@ $('#clicktest').on('click', function() {
                             scrollTop: 0
                         }, 1600, function() {
                             $('html, body').stop(true);
+                            $('.in-slide-content').fadeIn(700);
                         });
                     }
                 }, 250));
@@ -146,7 +147,10 @@ $('#clicktest').on('click', function() {
         if ($('#after').isOnScreen()) {
             $('.in-slide-content').fadeOut(700);
         }
-        if (!($('#after').isOnScreen())) {
+        if (!$('#after').isOnScreen()) {
+            $('.in-slide-content').fadeIn(700);
+        }
+        if (window.pageYOffset === 0) {
             $('.in-slide-content').fadeIn(700);
         }
         var st = $(this).scrollTop();
