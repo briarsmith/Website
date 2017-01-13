@@ -7,6 +7,7 @@ $('#navyy').hide();
     $('#after').hide();
     var height = $('#initial-content').height();
     $('#after').css('top', height);
+    $('#wrapper').hide();
 // $('#navyy').hide();
 // Background image slider :) it works nicely
 $(function() {
@@ -26,6 +27,7 @@ $(function() {
             }
         },
         onFirstImageLoaded: function() {
+            $('#wrapper').show();
             jQuery('#maximage').show();
             $('#after').show();
             $('#menu-icon').on('click', function() {
