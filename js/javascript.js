@@ -19,7 +19,7 @@ $(function() {
         cycleOptions: {
             fx: 'fade',
             //sync: false,
-            speed: 4000,
+            speed: 6000,
             timeout: 8000,
             pager: '#cycle-nav ul',
             pagerAnchorBuilder: function(idx, slide) {
@@ -122,6 +122,7 @@ $('#clicktest').on('click', function() {
                 $.data(this, 'scrollTimer', setTimeout(function() {
                     // do something
                     if (window.scrollY < (height / 2) && window.scrollY > 0) {
+                         $('.in-slide-content').fadeOut(400);
                         $('html, body').animate({
                             scrollTop: $("#after").offset().top
                         }, 1600, function () {
@@ -134,27 +135,22 @@ $('#clicktest').on('click', function() {
                 clearTimeout($.data(this, 'scrollTimer'));
                 $.data(this, 'scrollTimer', setTimeout(function() {
                     // do something
-                    if (window.scrollY < (height * (2/3)) && window.scrollY > (height /2)) {
+                    if (window.scrollY < height) {
                         $('html, body').animate({
                             scrollTop: 0
                         }, 1600, function() {
                             $('html, body').stop(true);
-                            $('.in-slide-content').fadeIn(700);
+                             $('.in-slide-content').fadeIn(400);
                         });
                     }
                 }, 250));
             }
             lastScrollTop = st;
 
-        if ($('#after').isOnScreen()) {
-            $('.in-slide-content').fadeOut(700);
-        }
-        if (!$('#after').isOnScreen()) {
-            $('.in-slide-content').fadeIn(700);
-        }
-        if (window.pageYOffset === 0) {
-            $('.in-slide-content').fadeIn(700);
-        }
+
+        // if (window.pageYOffset === 0) {
+        //     $('.in-slide-content').fadeIn(700);
+        // }
         var st = $(this).scrollTop();
         divs.css({ 'opacity' : (1 - st/height) });
         $('#after').css('opacity', st/height);
