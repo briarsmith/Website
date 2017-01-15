@@ -121,7 +121,7 @@ $('#clicktest').on('click', function() {
                 clearTimeout($.data(this, 'scrollTimer'));
                 $.data(this, 'scrollTimer', setTimeout(function() {
                     // do something
-                    if (window.scrollY < (height / 2) && window.scrollY > 0) {
+                    if (window.scrollY < height) {
                          $('.in-slide-content').fadeOut(400);
                         $('html, body').animate({
                             scrollTop: $("#after").offset().top
@@ -129,7 +129,7 @@ $('#clicktest').on('click', function() {
                             $('html, body').stop(true);
                         });
                     }
-                }, 250));
+                }, 20));
             } else {
                 // upscroll code
                 clearTimeout($.data(this, 'scrollTimer'));
@@ -143,7 +143,7 @@ $('#clicktest').on('click', function() {
                              $('.in-slide-content').fadeIn(400);
                         });
                     }
-                }, 250));
+                }, 20));
             }
             lastScrollTop = st;
 

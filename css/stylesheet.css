@@ -3,10 +3,10 @@ body, html {
     font-size: 100%;
 }
 
-/*::-webkit-scrollbar {*/
-    /*width: 0px;  !* remove scrollbar space *!*/
-    /*background: transparent;  !* optional: just make scrollbar invisible *!*/
-/*}*/
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
 
 /* Navbar CSS */
 #navyy {
