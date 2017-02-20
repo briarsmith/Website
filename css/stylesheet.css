@@ -140,8 +140,9 @@ to normal pointer events afterwards */
 
 /* Experience CSS */
 .experience-pics {
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 60%;
+    float: right;
+
 }
 
 .text-container {
@@ -157,6 +158,12 @@ to normal pointer events afterwards */
 .pic-container {
     width: 100%;
     margin-bottom: 3%;
+    overflow: auto;
+}
+
+#pic-container {
+    width: 60%;
+    margin: 0 auto;
 }
 
 .experienceheader {
@@ -176,8 +183,7 @@ to normal pointer events afterwards */
 .experiencepic {
     width: 35%;
     float: left;
-    border: 5px solid black;
-    border-radius: 5px;
+    border-radius: 40px;
     font-size: 0;
     line-height: 0;
     margin-right: 1.9%;
@@ -193,7 +199,7 @@ to normal pointer events afterwards */
 .img-circle {
     border-radius: 50%;
     height: 15%;
-    width: 25%;
+    width: 35%;
     margin-right: 4%;
 }
 
@@ -201,13 +207,11 @@ to normal pointer events afterwards */
     display: inline-block;
     vertical-align: top;
     text-align: left;
-    width: 70%;
+    width: 60%;
 }
 
 .aboutmecontent {
     text-align: center;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 .experienceloc {
@@ -222,4 +226,17 @@ to normal pointer events afterwards */
 
 .aboutmephoto {
     padding-bottom: 2%;
+}
+
+#about-me-section {
+    width: 60%;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+#readmore1, #readmore2, #readmore3 {
+    font-size: 120%;
+    color: royalblue;
+    cursor: pointer;
+    text-decoration: underline;
 }

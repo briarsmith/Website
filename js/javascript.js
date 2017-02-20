@@ -4,52 +4,81 @@
 // $('#menu-icon').show();
 
 $(document).ready(function(){
+    // Check if the user is on a mobile device
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        // $('#mobile').css('z-index', 99999999999999999);
-        // $('#mobile').css('width', $('#initial-content').width());
-        // $('#mobile').css('height', $('#initial-content').height());
-        // $('#wrapper').hide();
-        // $('#after').hide();
-        // $('#initial-content').hide();
         window.location.href = "mobile.html";
     }
-    else {
-    }
-$('#navyy').hide();
+    // Hide initial content until everything has rendered
+    $('#navyy').hide();
     $('#after').hide();
     var height = $('#initial-content').height();
     $('#after').css('top', height);
     $('#wrapper').hide();
-// $('#navyy').hide();
-// Background image slider :) it works nicely
-$(function() {
-    $('.toggle').bind('click', function(e){
-        e.preventDefault();
-        $('#maximage').cycle('toggle');
-    });
-    $('#maximage').maximage({
-        cycleOptions: {
-            fx: 'fade',
-            //sync: false,
-            speed: 6000,
-            timeout: 8000,
-            pager: '#cycle-nav ul',
-            pagerAnchorBuilder: function(idx, slide) {
-                return '<li><a href="#"></a></li>';
-            }
-        },
-        onFirstImageLoaded: function() {
-            $('#wrapper').show();
-            jQuery('#maximage').show();
-            $('#after').show();
-            $('#menu-icon').on('click', function() {
-                $('#navyy').fadeIn('400');
-                $('#menu-icon').fadeOut('400');
-            });
-        }
-    });
+    // Read More/Read Less logic
 
-});
+    $('.readmore').hide();
+    $('#readmore1').click(function(){
+
+        if($(this).text()=='Read More'){
+            $('#read-more-experience-1').slideDown();
+            $(this).text('Read Less');
+        }else{
+            $('#read-more-experience-1').slideUp();
+            $(this).text('Read More');
+        }
+
+    });
+    $('#readmore2').click(function(){
+
+        if($(this).text()=='Read More'){
+            $('#read-more-experience-2').slideDown();
+            $(this).text('Read Less');
+        }else{
+            $('#read-more-experience-2').slideUp();
+            $(this).text('Read More');
+        }
+
+    });
+    $('#readmore3').click(function(){
+
+        if($(this).text()=='Read More'){
+            $('#read-more-experience-3').slideDown();
+            $(this).text('Read Less');
+        }else{
+            $('#read-more-experience-3').slideUp();
+            $(this).text('Read More');
+        }
+
+    });
+// Background image slider
+    $(function() {
+        $('.toggle').bind('click', function(e){
+            e.preventDefault();
+            $('#maximage').cycle('toggle');
+        });
+        $('#maximage').maximage({
+            cycleOptions: {
+                fx: 'fade',
+                //sync: false,
+                speed: 6000,
+                timeout: 8000,
+                pager: '#cycle-nav ul',
+                pagerAnchorBuilder: function(idx, slide) {
+                    return '<li><a href="#"></a></li>';
+                }
+            },
+            onFirstImageLoaded: function() {
+                $('#wrapper').show();
+                jQuery('#maximage').show();
+                $('#after').show();
+                $('#menu-icon').on('click', function() {
+                    $('#navyy').fadeIn('400');
+                    $('#menu-icon').fadeOut('400');
+                });
+            }
+        });
+
+    });
 
 
 $(document).mouseup(function (e)
